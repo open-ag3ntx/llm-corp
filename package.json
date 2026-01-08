@@ -8,5 +8,13 @@
   "scripts": {
     "dev": "bun --filter '*' dev",
     "build": "bun --filter '*' build"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.1",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.16.0",
+    "drizzle-kit": "^0.31.8"
   }
 }
