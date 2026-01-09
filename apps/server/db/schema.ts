@@ -12,3 +12,9 @@ export const modelsTable = pgTable("models", {
   name: varchar().notNull(),
   version: varchar().notNull(),
 });
+
+export const tasksTable = pgTable("tasks", {
+  id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  description: varchar().notNull(),
+  status: varchar().notNull(),
+});
