@@ -28,16 +28,6 @@ const app = new Elysia()
       routesDir: "./routes",
     }),
   )
-  .get("/", () => ({ status: "ok", running: true }), {
-    response: z.object({
-      status: z.string().describe("Returns ok for health check"),
-      running: z.boolean().describe("Returns true if the server is running"),
-    }),
-    detail: {
-      description: "The root endpoint",
-      tags: ["App"],
-    },
-  })
   .listen(port);
 
 export { app };
