@@ -2,7 +2,6 @@
 import { Elysia, t } from 'elysia';
 
 export const chatRoutes = new Elysia({ prefix: '/chat' })
-  // Get all chats
   .get('/', async () => {
     return {
       success: true,
@@ -10,7 +9,6 @@ export const chatRoutes = new Elysia({ prefix: '/chat' })
     };
   })
 
-  // Get single chat by ID
   .get('/:id', async ({ params }) => {
     return {
       success: true,
@@ -25,7 +23,6 @@ export const chatRoutes = new Elysia({ prefix: '/chat' })
     })
   })
 
-  // Create new chat
   .post('/', async ({ body }) => {
     return {
       success: true,
