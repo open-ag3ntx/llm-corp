@@ -9,15 +9,15 @@ import swagger from "@elysiajs/swagger";
 const port = 8080;
 const app = new Elysia()
   .use(
-    swagger({
-      documentation: {
-        info: {
-          title: "llm-corp engine",
-          description: "llm-corp engine API",
-          version: "1.0.0",
-        },
-      },
-    }),
+    // swagger({
+    //   documentation: {
+    //     info: {
+    //       title: "llm-corp engine",
+    //       description: "llm-corp engine API",
+    //       version: "1.0.0",
+    //     },
+    //   },
+    // }),
   )
   .onBeforeHandle(() => {
     console.log(`Server is running on http://localhost:${port}`);
