@@ -22,7 +22,6 @@ const app = new Elysia()
   .onBeforeHandle(() => {
     console.log(`Server is running on http://localhost:${port}`);
   })
-  .use(cors())
   .use(
     autoroutes({
       routesDir: "./routes",
