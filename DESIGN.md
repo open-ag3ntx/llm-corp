@@ -66,55 +66,55 @@ This is NOT a workflow automation system. This IS a petri dish for emergent corp
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                         Frontend (Next.js)                   │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
-│  │ Agent Thought│  │  Center Chat │  │ Agent Thought│      │
-│  │   Panel 1    │  │   Interface  │  │   Panel 2    │      │
-│  └──────────────┘  └──────────────┘  └──────────────┘      │
-│  ┌──────────────┐                    ┌──────────────┐      │
-│  │ Agent Thought│                    │ Agent Thought│      │
-│  │   Panel 3    │                    │   Panel 4    │      │
-│  └──────────────┘                    └──────────────┘      │
+│                         Frontend (Next.js)                  │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │ Agent Thought│  │  Center Chat │  │ Agent Thought│       │
+│  │   Panel 1    │  │   Interface  │  │   Panel 2    │       │
+│  └──────────────┘  └──────────────┘  └──────────────┘       │
+│  ┌──────────────┐                    ┌──────────────┐       │
+│  │ Agent Thought│                    │ Agent Thought│       │
+│  │   Panel 3    │                    │   Panel 4    │       │
+│  └──────────────┘                    └──────────────┘       │
 └─────────────────────────────────────────────────────────────┘
                               │
                               │ WebSocket / API
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Backend API (Elysia + Bun)                │
-│                                                               │
+│                    Backend API (Elysia + Bun)               │
+│                                                             │
 │  ┌────────────────────────────────────────────────────────┐ │
 │  │              Message Notification Service              │ │
-│  │  (Broadcasts new messages to all agents)              │ │
+│  │  (Broadcasts new messages to all agents)               │ │
 │  └────────────────────────────────────────────────────────┘ │
-│                              │                               │
+│                              │                              │
 │  ┌────────────────────────────────────────────────────────┐ │
 │  │           Agent Decision Engine (Per Agent)            │ │
-│  │  - Evaluates: Respond? Wait? Ignore?                  │ │
-│  │  - Generates: Public message + Private thought        │ │
-│  │  - Updates: Agent state & memory                      │ │
+│  │  - Evaluates: Respond? Wait? Ignore?                   │ │
+│  │  - Generates: Public message + Private thought         │ │
+│  │  - Updates: Agent state & memory                       │ │
 │  └────────────────────────────────────────────────────────┘ │
-│                              │                               │
+│                              │                              │
 │  ┌────────────────────────────────────────────────────────┐ │
 │  │              LLM Provider Integration                  │ │
-│  │  - Anthropic (Claude models)                          │ │
-│  │  - OpenAI (GPT models)                                │ │
-│  │  - Google (Gemini models)                             │ │
+│  │  - Anthropic (Claude models)                           │ │
+│  │  - OpenAI (GPT models)                                 │ │
+│  │  - Google (Gemini models)                              │ │
 │  └────────────────────────────────────────────────────────┘ │
-│                              │                               │
+│                              │                              │
 │  ┌────────────────────────────────────────────────────────┐ │
 │  │           Chat Compaction Service                      │ │
-│  │  - Summarizes old messages                            │ │
-│  │  - Maintains agent-specific memory                    │ │
+│  │  - Summarizes old messages                             │ │
+│  │  - Maintains agent-specific memory                     │ │
 │  └────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                  Database (PostgreSQL + Drizzle)             │
-│  - Agents                 - Messages                         │
-│  - Events                 - Agent Decisions                  │
-│  - Agent State            - Polls & Votes                    │
-│  - Relationships          - Tool Usage Logs                  │
+│                  Database (PostgreSQL + Drizzle)            │
+│  - Agents                 - Messages                        │
+│  - Events                 - Agent Decisions                 │
+│  - Agent State            - Polls & Votes                   │
+│  - Relationships          - Tool Usage Logs                 │
 └─────────────────────────────────────────────────────────────┘
 ```
 
