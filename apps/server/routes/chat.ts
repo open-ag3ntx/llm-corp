@@ -58,17 +58,4 @@ export const chatRoutes = new Elysia({ prefix: '/chat' })
       content: t.String(),
       role: t.Optional(t.String())
     })
-  })
-
-  // Delete chat
-  .delete('/:id', async ({ params }) => {
-    return {
-      success: true,
-      message: 'Chat deleted',
-      chatId: params.id
-    };
-  }, {
-    params: t.Object({
-      id: t.String()
-    })
   });
