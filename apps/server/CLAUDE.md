@@ -39,7 +39,6 @@ test("hello world", () => {
 ## Frontend
 
 Use HTML imports with `Bun.serve()`. Don't use `vite`. HTML imports fully support React, CSS, Tailwind.
-
 Server:
 
 ```ts#index.ts
